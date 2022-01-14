@@ -1,12 +1,21 @@
 const mongoose = require("mongoose")
 
 const mongoDB = process.env.MONGODB_PROD
+const dbconection = async()=>{
 
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
 
-const db = mongoose.connection
+    await mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
+    
+    const db = mongoose.connection
+    
+    
+}
 
-db.on('error',console.error.bind(console, 'Fallo conexion BD!!'))
-db.once('open', () =>{
-    console.log("Conectado")
-})
+dbconection()
+
+/*db.on('error',console.error.bind(console, 'Fallo conexion BD!!'))
+    db.once('open', () =>{
+        console.log("Conectado")
+    })
+
+    */
