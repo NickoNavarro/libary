@@ -1,0 +1,20 @@
+extends layout 
+block  content 
+
+    h1=title
+
+    ul 
+        each val in  book_instance_list 
+            li 
+                a(href=val.url) #{ val.book.title} : #{val.imprint} -
+                if val.status == 'Available'
+                  span #{val.status}
+                else if val.status=='Maintenance'
+                  span #{val.status}
+                else 
+                  span #{val.status}
+                if val.status!='Available'
+                  span (Due: #{val.due_back_formatted})  
+
+        else 
+            li No books

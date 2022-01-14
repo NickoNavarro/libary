@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  h2= genre.name 
+  
+  ul 
+    each g in genre_book
+        li 
+            h3 #{g.title} 
+            p #{g.summary}
+            
+
+    else 
+        li There are genre details.

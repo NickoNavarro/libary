@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+  
+  if title 
+    p A variable name 'title' exists 
+  else
+    p p A variable name 'title' no exists
+    
